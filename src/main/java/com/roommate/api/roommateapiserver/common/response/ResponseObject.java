@@ -16,7 +16,7 @@ import java.util.Map;
 public class ResponseObject {
 
 
-    // 실제 리턴될 데이터 Single Object : a single resource object, a single resource identifier object, or null
+    // 실제 리턴될 데이터 Singl e Object : a single resource object, a single resource identifier object, or null
     // 실제 리턴될 데이터 Array Object : an array of resource objects, an array of resource identifier objects, or an empty array
     // 해당 데이터는 NULL인 경우가 아니면 생략하지 않음
     private Object data;
