@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.roommate.api.roommateapiserver.member.mapper.MemberMapper">
+    <select id="getMemberList" resultType="Map">
+        SELECT
+          *
+        FROM MEMBER_COMMON
+    </select>
+
+    <select id="getMemberInfo" parameterType="String" resultType="HashMap">
+        SELECT
+          *
+        FROM MEMBER_COMMON
+          WHERE user_id = #{user_id}
+    </select>
+
+    <insert id="setMemberInfo" parameterType="MemberDto" useGeneratedKeys="true" keyProperty="member_no">
+        INSERT INTO MEMBER_COMMON (user_id, user_name, sex, reg_dt)
+        VALUES (#{user_id}, #{user_name}, #{sex}, NOW())
+    </insert>
+</mapper>
